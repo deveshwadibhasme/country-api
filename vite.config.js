@@ -13,12 +13,7 @@ export default defineConfig(
       build:{
         outDir:'build',
         sourcemap:true,
-        rollupOptions: {
-          external: ['/components/LoadingCountry.jsx']
-        },
       },
     }
   }
 )
-
-

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Loading from "/components/LoadingCountry.jsx";
+import Loading from "../components/LoadingCountry.jsx";
 import { useParams } from "react-router";
 import Error from '../components/Error.jsx'
 
