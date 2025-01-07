@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <main>
             <SearchFilter setQuery={setQuery} setRegion={setRegion} />
-            <CountryContainer query={query} region={region} />
+            {/* <CountryContainer query={query} region={region} /> */}
         </main>
     )
 }

@@ -1,20 +1,44 @@
-import { Link } from "react-router"
+import { useEffect, useState } from "react";
+import { Link } from "react-router"; // import Link from react-router-dom
+import useMode from "../hooks/useMode";
 
 const Header = () => {
-  return (
-    <header className="max-w-screen-xl w-full min-h-16 flex items-center justify-center shadow-lg shadow-black/60 mx-auto">
-        <div className="max-w-screen-lg flex w-[80%] justify-between items-center">
-            <Link to = {'/'} className="text-lg">Where in the world?</Link>
-            <div id="mode" className="max-w-28 w-full flex h-full items-center justify-around cursor-pointer">
-                <i className="far fas fa-moon text-xl text-white [text-shadow:0px_0px_3px_rgb(12,_20,_23)]" title="dark or white" aria-hidden="true"></i><span className="sr-only">dark or white</span>
-                <h2 id="mode-title">
-                <span id="light" hidden="">Dark Mode</span>
-                {/* <span span="" id="dark">Light Mode</span> */}
-                </h2>
-            </div>
-        </div>
-    </header>
-  )
-}
+  const [mode, toggleMode] = useMode();
+  const handleMode = () => {
+    toggleMode(!mode);
+  };
 
-export default Header
+  localStorage.getItem("mode") === "true"
+    ? document.body.classList.add("dark")
+    : document.body.classList.remove("dark");
+
+  return (
+    <header className="max-w-screen-xl w-full min-h-16 flex items-center justify-center border-b-2 border-[var(--border-color)] mx-auto">
+      <div className="max-w-screen-lg flex w-[80%] justify-between items-center">
+        <Link to={"/"} className="text-lg font-bold">
+          Where in the world?
+        </Link>
+        <div
+          id="mode"
+          onClick={handleMode}
+          className="max-w-28 w-full flex h-full items-center justify-around cursor-pointer"
+        >
+          <i
+            className={`far fas ${
+              mode ? "fa-moon" : "fa-sun"
+            } text-xl text-white [text-shadow:0px_0px_3px_rgb(12,_20,_23)]`}
+            title="moon"
+            aria-hidden="true"
+          ></i>
+          <h2 id="mode-title">
+            <span className="font-bold">
+              {mode ? "Dark Mode" : "Light Mode"}
+            </span>
+          </h2>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

@@ -5,8 +5,8 @@ const Loading = () => {
   let loadingCard = []
   for (let i = 0; i < 8; i++) {
     loadingCard.push(
-      <div key={i} className='max-w-[250px] min-h-[250px] md:min-h-[290px] rounded-[10px] [box-shadow:0px_0px_1px_rgb(12,_20,_23)] relative h-full w-full'>
-        <img className="absolute top-0" src="https://raw.githubusercontent.com/prafful98/vue3-shimmer/HEAD/assets/card.gif"></img>
+      <div key={i} className='max-w-[250px] min-h-[250px] md:min-h-[290px] rounded-[10px] [box-shadow:0px_0px_1px_rgb(12,_20,_23)] relative h-full w-full bg-slate-400/20'>
+        
       </div>
     )
   }

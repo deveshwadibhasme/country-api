@@ -59,7 +59,7 @@ const Country = () => {
   return country === null ? (
     <Loading />
   ) : (
-    <div className="max-w-6xl min-h-[470px] mx-auto flex items-center relative justify-center md:justify-normal flex-col md:flex-row mt-5">
+    <div className="max-w-6xl min-h-[470px] mx-auto flex items-center relative justify-center md:justify-normal flex-col md:flex-row mt-5 text-[var(--text-color)]">
       <button
         type="button"
         onClick={() => history.back()}
@@ -67,10 +67,10 @@ const Country = () => {
       >
         &larr; Back
       </button>
-      <div className="w-[40%] mx-auto md:mx-0">
-        <img src={country.image} alt="" />
+      <div className="w-[40%] mx-auto md:mx-0 [box-shadow:0px_0px_15px_var(--border-color)]">
+        <img src={country.image} className="[box-shadow:0px_0px_15px_var(--border-color)]" alt="" />
       </div>
-      <div className="mx-auto md:ml-10  self-start mt-5 text-center md:text-left">
+      <div className="mx-auto md:ml-10  self-start mt-5 text-center md:text-left">  
         <h1 className="text-5xl mb-6">
           <b>{country.name}</b>
         </h1>

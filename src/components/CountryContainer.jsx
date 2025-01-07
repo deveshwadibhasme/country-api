@@ -8,14 +8,21 @@ const CountryContainer = ({ query, region }) => {
 
   useEffect(() => {
     async function fetchAllCountry() {
-      const response = await fetch("https://restcountries.com/v3.1/all");
-      const data = await response.json();
-      setCountryData(data);
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setCountryData(data);
+      } catch (error) {
+        console.error("Error fetching country data:", error);
+      }
     }
+
     fetchAllCountry();
-    return () => {
-      // cleanup code here
-    };
   }, []);
 
   useEffect(() => {

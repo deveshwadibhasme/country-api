@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const CountryCard = (props) => {
     const { name, flag, population, region, capital } = props;
     return (
-        <Link to={'/'+ name} className='flex flex-col max-w-[250px] min-h-[250px] md:min-h-[290px] rounded-[10px] [box-shadow:0px_0px_1px_rgb(12,_20,_23)] overflow-hidden mx-[auto] my-[0] h-full w-full'>
+        <Link to={'/'+ name} className='flex flex-col max-w-[250px] min-h-[250px] md:min-h-[290px] rounded-[10px] border-2 border-[var(--border-color)] overflow-hidden mx-[auto] my-[0] h-full w-full'>
             <div className='max-h-40 h-full w-full'>  
                 <img src={flag} className='h-full w-full object-cover' alt='afghanistan-flag'/>
             </div>
