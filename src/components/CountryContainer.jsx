@@ -9,7 +9,7 @@ const CountryContainer = ({ query, region }) => {
   useEffect(() => {
     async function fetchAllCountry() {
       try {
-        const response = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,region,population");
+        const response = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags");
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -88,4 +88,5 @@ const CountryContainer = ({ query, region }) => {
 };
 
 export default CountryContainer;
+
 
